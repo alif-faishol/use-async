@@ -1,28 +1,28 @@
 import { useCallback, useRef, useState } from "react";
 
-type UseApiState<T> = {
+type UseAsyncState<T> = {
   loading: boolean;
   error?: Error;
   data?: T;
 };
 
-type UseApiOptions<T> = {
+type UseAsyncOptions<T> = {
   initialData?: T;
   initialLoadingState?: boolean;
   onError?: (error: Error) => void;
   onSuccess?: (data: T) => void;
 };
 
-export type UseApiReturnType<T, U extends unknown[]> = {
-  state: UseApiState<T>;
+export type UseAsyncReturnType<T, U extends unknown[]> = {
+  state: UseAsyncState<T>;
   exec: (...args: U) => Promise<void>;
   setData: (data: T | undefined) => void;
 };
 
-const useApi = <T, U extends unknown[]>(
+const useAsync = <T, U extends unknown[]>(
   func: (...args: U) => Promise<T>,
-  options: UseApiOptions<T> = {}
-): UseApiReturnType<T, U> => {
+  options: UseAsyncOptions<T> = {}
+): UseAsyncReturnType<T, U> => {
   const {
     initialData,
     initialLoadingState = false,
@@ -30,7 +30,7 @@ const useApi = <T, U extends unknown[]>(
     onSuccess,
   } = options;
 
-  const [state, setState] = useState<UseApiState<T>>({
+  const [state, setState] = useState<UseAsyncState<T>>({
     loading: initialLoadingState,
     data: initialData,
   });
@@ -83,4 +83,4 @@ const useApi = <T, U extends unknown[]>(
   };
 };
 
-export default useApi;
+export default useAsync;
