@@ -1,6 +1,6 @@
 {
   "name": "@alifaishol/use-async",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React hook for managing async function states",
   "main": "dist/index.js",
   "scripts": {
