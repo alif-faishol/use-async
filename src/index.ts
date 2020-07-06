@@ -37,6 +37,8 @@ const useAsync = <T, U extends unknown[]>(
 
   const onSuccessRef = useRef(onSuccess);
   const onErrorRef = useRef(onError);
+  onSuccessRef.current = onSuccess;
+  onErrorRef.current = onError;
 
   // this is a reference of promise from latest exec() execution
   const validPromise = useRef<Promise<T>>();

@@ -1,5 +1,5 @@
 {
-  "name": "@alifaishol/react-async-hook",
+  "name": "@alifaishol/use-async",
   "version": "1.0.0",
   "description": "React hook for managing async function states",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alif-faishol/react-async-hook.git"
+    "url": "git+https://github.com/alif-faishol/use-async.git"
   },
   "keywords": [
     "typescript",
@@ -32,9 +32,9 @@
   "author": "Alif Faishol",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alif-faishol/react-async-hook/issues"
+    "url": "https://github.com/alif-faishol/use-async/issues"
   },
-  "homepage": "https://github.com/alif-faishol/react-async-hook#readme",
+  "homepage": "https://github.com/alif-faishol/use-async#readme",
   "devDependencies": {
     "@types/react": "^16.9.41",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
