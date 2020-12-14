@@ -17,6 +17,7 @@ export type UseAsyncReturnType<T, U extends unknown[]> = {
   state: UseAsyncState<T>;
   exec: (...args: U) => Promise<void>;
   setData: (data: T | undefined) => void;
+  setError: (error: Error | undefined) => void;
 };
 
 const useAsync = <T, U extends unknown[]>(
@@ -78,10 +79,15 @@ const useAsync = <T, U extends unknown[]>(
     setState((prevState) => ({ ...prevState, data }));
   }, []);
 
+  const setError = useCallback((error?: Error) => {
+    setState((prevState) => ({ ...prevState, error }));
+  }, []);
+
   return {
     state,
     exec,
     setData,
+    setError,
   };
 };
 
